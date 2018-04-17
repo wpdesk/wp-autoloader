@@ -8,7 +8,7 @@ if ( ! class_exists( 'WPDesk_Loader' ) ) {
  * Manages loaders that can load/autoload and create resources
  */
 class WPDesk_Loader_Manager {
-	const DEFAULT_LOADER_PRIORITY = -10;
+	const DEFAULT_LOADER_PRIORITY = - 10;
 
 	const HOOK_TO_LOAD_LOADERS = 'plugins_loaded';
 
@@ -81,11 +81,14 @@ class WPDesk_Loader_Manager {
 	 * @param string $hook
 	 * @param int $priority
 	 */
-	public function attach_autoload_hook_once( $hook = self::HOOK_TO_LOAD_LOADERS, $priority = self::DEFAULT_LOADER_PRIORITY ) {
+	public function attach_autoload_hook_once(
+		$hook = self::HOOK_TO_LOAD_LOADERS,
+		$priority = self::DEFAULT_LOADER_PRIORITY
+	) {
 		$this->manager_hook          = $hook;
 		$this->manager_hook_priority = $priority;
 		if ( ! static::$load_hook_added ) {
-			static::$load_hook_added = add_action( $hook, [ $this, 'notify_loaders_action' ], 1, $priority );
+			static::$load_hook_added = add_action( $hook, [ $this, 'notify_loaders_action' ], $priority );
 		}
 	}
 
