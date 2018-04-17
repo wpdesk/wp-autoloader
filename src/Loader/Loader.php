@@ -22,6 +22,10 @@ interface WPDesk_Loader {
 	/** @return bool */
 	public function notify_all_loaded();
 
-	/** @return void */
+    /**
+     * @param WPDesk_Loader_Manager $manager Observed manager
+     *
+     * @return void
+     */
 	public function update_manager(WPDesk_Loader_Manager $manager);
 }
