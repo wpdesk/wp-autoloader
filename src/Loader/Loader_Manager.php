@@ -8,19 +8,19 @@ if ( ! class_exists( 'WPDesk_Loader' ) ) {
  * Manages loaders that can load/autoload and create resources
  */
 class WPDesk_Loader_Manager {
-	const DEFAULT_LOADER_PRIORITY = 5;
+	const DEFAULT_LOADER_PRIORITY = -10;
 
 	const HOOK_TO_LOAD_LOADERS = 'plugins_loaded';
 
-	const HOOK_BEFORE_LOAD_AUTOLOADERS = 'wpdesk_loader_manager_before_load_autoloaders';
-	const HOOK_ALL_LOADERS_LOADED = 'wpdesk_loader_manager_all_autoloaders_loaded';
-	const HOOK_ALL_LOADERS_LOADED_AND_NOTIFIED = 'wpdesk_loader_manager_all_autoloaders_loaded_notified';
-	const HOOK_BEFORE_CREATE = 'wpdesk_loader_manager_before_create';
-	const HOOK_ALL_LOADERS_CREATED = 'wpdesk_loader_manager_all_created';
+	const HOOK_BEFORE_LOAD_AUTOLOADERS = 'wp_autoloader_loader_manager_before_load_autoloaders';
+	const HOOK_ALL_LOADERS_LOADED = 'wp_autoloader_loader_manager_all_autoloaders_loaded';
+	const HOOK_ALL_LOADERS_LOADED_AND_NOTIFIED = 'wp_autoloader_loader_manager_all_autoloaders_loaded_notified';
+	const HOOK_BEFORE_CREATE = 'wp_autoloader_loader_manager_before_create';
+	const HOOK_ALL_LOADERS_CREATED = 'wp_autoloader_loader_manager_all_created';
 
-	const FILTER_IF_LOAD_LOADER = 'wpdesk_loader_should_load';
-	const FILTER_LOADERS_TO_LOAD = 'wpdesk_loader_loaders_to_load';
-	const FILTER_LOADERS_TO_CREATE = 'wpdesk_loader_loaders_to_create';
+	const FILTER_IF_LOAD_LOADER = 'wp_autoloader_loader_should_load';
+	const FILTER_LOADERS_TO_LOAD = 'wp_autoloader_loader_loaders_to_load';
+	const FILTER_LOADERS_TO_CREATE = 'wp_autoloader_loader_loaders_to_create';
 
 	/** @var array */
 	protected static $loaders = [];
